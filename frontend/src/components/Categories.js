@@ -7,8 +7,8 @@ class Categories extends Component{
             console.log(localStorage.getItem('loggedin'))
             return(
             <div>
-                {(localStorage.getItem('loggedin')==='yes') ? '' : <Link to ={"/login"}> <p>Login</p></Link>}
-                <Link to={"/post"}><p>Post new job</p></Link>
+                {(localStorage.getItem('loggedin')==='yes') ? <Link to={"/post"}><p>Post new job</p></Link> : <Link to ={"/login"}> <p>Login</p></Link>}
+                
                 <h1>Categories.</h1>
 
                 {this.props.categories.map(el => {
