@@ -4,12 +4,12 @@ import {Link} from "react-router-dom";
 class Categories extends Component{
 
         render() {
-
+            console.log(localStorage.getItem('loggedin'))
             return(
             <div>
-                <Link to ={"/login"}> <p>Login</p></Link>
-                <Link to={"/post"}><p>Post</p></Link>
-                <h1>Categories</h1>
+                {(localStorage.getItem('loggedin')==='yes') ? '' : <Link to ={"/login"}> <p>Login</p></Link>}
+                <Link to={"/post"}><p>Post new job</p></Link>
+                <h1>Categories.</h1>
 
                 {this.props.categories.map(el => {
                     return <Link key={el._id} to={`/jobs/${el.namePath}`}><p>{el.name} <br></br>
